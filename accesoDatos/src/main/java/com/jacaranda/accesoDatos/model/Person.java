@@ -1,13 +1,16 @@
 package com.jacaranda.accesoDatos.model;
 
 
+import java.util.List;
 import java.util.Objects;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -34,6 +37,9 @@ public class Person  {
     @NotNull
     @Column(name = "sexo", nullable = false)
     private Boolean sex; 
+    
+    @OneToMany(mappedBy = "")
+    private List<Contac> listContact;
     
     public Integer getId() {
         return id;
